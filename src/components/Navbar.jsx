@@ -39,7 +39,7 @@ function Navbar({ isLight, toggleTheme }) {
               Password Generator
             </h2>
 
-            <p className="mt-[-5] truncate text-[8px] font-medium uppercase tracking-[0.12em] sm:text-[9px] md:text-[10px]">
+            <p className="mt-0.5 truncate text-[8px] font-medium uppercase tracking-[0.12em] sm:text-[9px] md:text-[10px]">
               <span className="bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent">
                 By Hassan Ali
               </span>
