@@ -8,7 +8,6 @@ function Footer({ isLight }) {
       }`}
     >
       <div className="flex min-h-16 w-full items-center justify-center px-4 py-5 sm:px-6">
-
         <p
           className={`text-center text-[11px] leading-5 transition-colors duration-500 sm:text-xs md:text-sm ${
             isLight
@@ -18,7 +17,7 @@ function Footer({ isLight }) {
         >
           © 2026{" "}
           <span
-            className={`font-semibold ${
+            className={`font-semibold transition-colors duration-500 ${
               isLight
                 ? "text-slate-700"
                 : "text-slate-400"
@@ -28,7 +27,6 @@ function Footer({ isLight }) {
           </span>
           . All rights reserved.
         </p>
-
       </div>
     </footer>
   );
