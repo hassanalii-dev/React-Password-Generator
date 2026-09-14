@@ -439,9 +439,7 @@ function App() {
             box-shadow 250ms ease;
         }
 
-        .copy-button:hover:not(:disabled) {
-          transform: translateY(-2px);
-        }
+        
 
         .copy-button:active:not(:disabled) {
           transform: scale(0.95);
