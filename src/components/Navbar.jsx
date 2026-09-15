@@ -1,10 +1,10 @@
 function Navbar({ isLight, toggleTheme }) {
   return (
     <nav
-      className={`navbar-animation relative z-50 w-full border-b backdrop-blur-xl transition-all duration-700 ${
+      className={`navbar-animation sticky top-0 z-50 w-full border-b transition-all duration-700 ${
         isLight
-          ? "border-slate-200 bg-white/85"
-          : "border-white/10 bg-slate-950/80"
+          ? "border-slate-200 bg-white"
+          : "border-white/10 bg-slate-950"
       }`}
     >
       <div className="navbar-content flex min-h-16 w-full items-center justify-between px-3 py-2 sm:px-5 md:px-6 lg:px-7">
@@ -169,7 +169,6 @@ function Navbar({ isLight, toggleTheme }) {
           transform: translateX(1px);
         }
 
-        /* Theme Toggle */
         .theme-button {
           animation: themeReveal 0.65s 0.22s
             cubic-bezier(0.22, 1, 0.36, 1) both;
