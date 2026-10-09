@@ -11,7 +11,7 @@ function App() {
 
   const [password, setPassword] = useState("");
   const [copied, setCopied] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
   const [showSuccess, setShowSuccess] = useState(false);
   const [pageLoaded, setPageLoaded] = useState(false);
   const [passwordKey, setPasswordKey] = useState(0);
@@ -155,10 +155,6 @@ function App() {
           -webkit-tap-highlight-color: transparent;
         }
 
-        /* =========================
-           PAGE ANIMATIONS
-        ========================= */
-
         @keyframes pageEnter {
           0% {
             opacity: 0;
@@ -207,10 +203,6 @@ function App() {
           }
         }
 
-        /* =========================
-           PASSWORD ANIMATION
-        ========================= */
-
         @keyframes passwordChange {
           0% {
             opacity: 0;
@@ -224,10 +216,6 @@ function App() {
             filter: blur(0);
           }
         }
-
-        /* =========================
-           SUCCESS ANIMATION
-        ========================= */
 
         @keyframes successMessage {
           0% {
@@ -250,10 +238,6 @@ function App() {
             transform: translateY(-4px) scale(0.98);
           }
         }
-
-        /* =========================
-           BACKGROUND ANIMATION
-        ========================= */
 
         @keyframes glowOne {
           0%,
@@ -287,10 +271,6 @@ function App() {
             transform: translate(-50%, -50%) scale(1.1);
           }
         }
-
-        /* =========================
-           ANIMATION CLASSES
-        ========================= */
 
         .page-animation {
           animation: pageEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -331,10 +311,6 @@ function App() {
           will-change: transform;
         }
 
-        /* =========================
-           SMOOTH CARDS
-        ========================= */
-
         .main-card {
           transition:
             transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -345,7 +321,7 @@ function App() {
         }
 
         .main-card:hover {
-          transform: translateY(-3px) scale(1.005);
+          transform: none;
         }
 
         .output-card {
@@ -358,7 +334,7 @@ function App() {
         }
 
         .output-card:hover {
-          transform: translateY(-2px) scale(1.01);
+          transform: none;
         }
 
         .strength-card {
@@ -382,12 +358,8 @@ function App() {
         }
 
         .length-card:hover {
-          transform: translateY(-2px) scale(1.01);
+          transform: none;
         }
-
-        /* =========================
-           OPTION CARDS
-        ========================= */
 
         .option-card {
           transition:
@@ -399,16 +371,12 @@ function App() {
         }
 
         .option-card:hover {
-          transform: scale(1.025);
+          transform: none;
         }
 
         .option-card:active {
           transform: scale(0.99);
         }
-
-        /* =========================
-           GENERATE BUTTON
-        ========================= */
 
         .generate-button {
           transition:
@@ -428,10 +396,6 @@ function App() {
           transform: translateY(0) scale(0.985);
         }
 
-        /* =========================
-           COPY BUTTON
-        ========================= */
-
         .copy-button {
           transition:
             transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -439,15 +403,9 @@ function App() {
             box-shadow 250ms ease;
         }
 
-        
-
         .copy-button:active:not(:disabled) {
           transform: scale(0.95);
         }
-
-        /* =========================
-           THEME TOGGLE
-        ========================= */
 
         .theme-button {
           transition:
@@ -464,10 +422,6 @@ function App() {
           transform: scale(0.94);
         }
 
-        /* =========================
-           RANGE SLIDER
-        ========================= */
-
         input[type="range"] {
           transition: opacity 250ms ease;
         }
@@ -475,10 +429,6 @@ function App() {
         input[type="range"]:hover {
           opacity: 0.9;
         }
-
-        /* =========================
-           MOBILE
-        ========================= */
 
         @media (max-width: 640px) {
           .main-card {
@@ -501,10 +451,6 @@ function App() {
             transform: none;
           }
         }
-
-        /* =========================
-           REDUCED MOTION
-        ========================= */
 
         @media (prefers-reduced-motion: reduce) {
           *,
@@ -571,7 +517,6 @@ function App() {
             }`}
           >
             <section className="w-full">
-
               <div className="header-animation mb-7 text-center sm:mb-9">
                 <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-violet-400 sm:text-sm">
                   Secure & Simple
@@ -756,7 +701,6 @@ function App() {
                   </h2>
 
                   <div className="grid gap-3 sm:grid-cols-2">
-
                     <label
                       className={`option-card group flex cursor-pointer items-center justify-between rounded-2xl border p-4 ${
                         useUpper
@@ -904,7 +848,6 @@ function App() {
                         className="h-5 w-5 cursor-pointer accent-violet-500"
                       />
                     </label>
-
                   </div>
                 </div>
 
@@ -931,17 +874,6 @@ function App() {
                     </div>
                   )}
                 </div>
-
-                <p
-                  className={`mt-1 text-center text-[11px] leading-5 transition-colors duration-500 sm:text-xs ${
-                    isLight
-                      ? "text-slate-500"
-                      : "text-slate-500"
-                  }`}
-                >
-                  Your password is generated directly in your browser.
-                  Nothing is sent to a server.
-                </p>
               </div>
             </section>
           </div>
